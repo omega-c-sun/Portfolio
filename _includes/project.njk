@@ -1,0 +1,36 @@
+---
+layout: base.njk
+---
+<article class="project-page">
+  <header class="project-header">
+    <p class="eyebrow">Project</p>
+    <h1>{{ title }}</h1>
+    {% if description %}<p class="lede">{{ description }}</p>{% endif %}
+    <dl class="meta">
+      {% if date %}
+      <div>
+        <dt>Date</dt>
+        <dd><time datetime="{{ date | date('%Y-%m-%d') }}">{{ date | date("%B %d, %Y") }}</time></dd>
+      </div>
+      {% endif %}
+      {% if technologies %}
+      <div>
+        <dt>Technologies</dt>
+        <dd>{{ technologies }}</dd>
+      </div>
+      {% endif %}
+      {% if github %}
+      <div>
+        <dt>Source</dt>
+        <dd><a href="{{ github }}" target="_blank" rel="noopener">GitHub</a></dd>
+      </div>
+      {% endif %}
+    </dl>
+  </header>
+
+  <div class="project-body">
+    {{ content | safe }}
+  </div>
+
+  <p class="back-link"><a href="/projects/">← All projects</a></p>
+</article>

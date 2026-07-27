@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} · {% endif %}Omega C Sun</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/css/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Omega C Sun</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a></li>
+        <li><a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a></li>
+        <li><a href="/projects/" {% if "/projects/" in page.url %}aria-current="page"{% endif %}>Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <a href="https://github.com/omega-c-sun" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </footer>
+</body>
+</html>

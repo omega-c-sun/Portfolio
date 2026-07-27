@@ -1,11 +1,15 @@
-*.md
-!README.md
+node_modules/
+_site/
+.cache/
+.DS_Store
+Thumbs.db
+*.log
 
+NOTES*
+FOOTNOTES*
 *plan*
 *planning*
 *notes*
 *footnote*
 *footnotes*
 TODO*
-NOTES*
-FOOTNOTES*
